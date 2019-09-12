@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>All Recipes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+
+<body>
+	<div class="container my-2">
+		<div class="card">
+			<div class="card-body">
+				<div th:switch="${recipes}" class="container my-5">
+					<div class="row">
+						<div class="col-md-3">
+							<p class="my-3">
+								<a href="/edit" class="btn btn-primary"> <i
+									class="fas fa-user-plus ml-2"> Add Recipe </i></a>
+							</p>
+						</div>
+						<div class="col-md-3">
+							<span><img src="/image/Man_Cooking.jpg" alt="Cooking image"
+								width=200px, height=150px></span>
+						</div>
+						<div class="col-md-3">
+							<span><img src="/image/Ingredients_And_Pan.jpg" alt="Cooking image"
+								width=200px, height=150px></span>
+						</div>
+						<div class="col-md-3">
+							<span><img src="/image/Cooking.jpg" alt="Cooking image"
+								width=200px, height=150px></span>
+						</div>
+					</div>
+					<p class="my-2"
+						style="text-align: center; font-style: italic; font-size: 40px; font-family: Monotype Corsiva">Welcome
+						to FoodHub!</p>
+					<p class="my-4" style="font-style: italic">Get recipes of
+						variety of dishes in short description! What's more, you can
+						upload your own recipe and share it with others! Bon Appetit!</p>
+					<div class="col-md-10">
+						<h2 th:case="null">No record found !!</h2>
+						<div th:case="*">
+							<table class="table table-striped table-responsive-md">
+								<thead>
+									<tr>
+										<th>Id</th>
+										<th>Dish</th>
+										<th>Indicator</th>
+										<th>Serving Capacity</th>
+										<th>Ingredients</th>
+										<th>Instructions</th>
+										<th>Recipe Created At</th>
+										<th>Edit</th>
+										<th>Delete</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="recipe : ${recipes}">
+										<td th:text="${recipe.id}"></td>
+										<td th:text="${recipe.dish}"></td>
+										<td th:text="${recipe.indicator}"></td>
+										<td th:text="${recipe.servingCap}"></td>
+										<td th:text="${recipe.ingredients}"></td>
+										<td th:text="${recipe.instructions}"></td>
+										<td th:text="${recipe.updatedAt}"></td>
+										<td><a th:href="@{/edit/{id}(id=${recipe.id})}"
+											class="btn btn-primary"> <i class="fas fa-user-edit ml-2"></i>
+										</a></td>
+										<td><a th:href="@{/delete/{id}(id=${recipe.id})}"
+											class="btn btn-primary"> <i
+												class="fas fa-user-times ml-2"></i>
+										</a></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
