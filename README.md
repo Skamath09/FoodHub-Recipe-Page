@@ -1,4 +1,4 @@
-# Recipe-Assignment
+# FoodHub: Recipe page
 Welcome to FoodHub recipe page!
 You can find cooking recipes for different dishes in simple, short description. 
 Users can perform CRUD Operations through the interactive buttons providedon the page as:
@@ -29,12 +29,10 @@ For Unit Testing:
 Mockito framework has been used due to its good readability and neatness. 
 It provides clean verification errors
 
-I have written 6 unit test cases for the Service class which check:
+I have written unit test cases for the Service class which check:
 1) List of all recipes
 2) Getting a recipe by Id
 3) Creating that is Posting a new recipe
 4) Update recipe of specific Id and 5) When list of recipes is empty
 6) Delete recipe of specified Id
-
-Other test cases for other classes can be written but I could not due to time constraint.
 
