@@ -1,10 +1,10 @@
 # FoodHub: Recipe page
 Welcome to FoodHub recipe page!
 You can find cooking recipes for different dishes in simple, short description. 
-Users can perform CRUD Operations through the interactive buttons providedon the page as:
+Users can perform CRUD Operations through the interactive buttons provided on the page as:
 1) Add Recipe for creating and posting a new recipe 
 2) Edit button for updating an already existing recipe 
-3) Delete bitton for deleting a recipe 
+3) Delete button for deleting a recipe 
 4) Getting all the recipes on the home page which is the FoodHub page.
 
 Technologies used:
